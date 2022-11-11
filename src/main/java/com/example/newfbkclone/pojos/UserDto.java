@@ -1,8 +1,10 @@
 package com.example.newfbkclone.pojos;
 
 import lombok.Data;
+import lombok.Getter;
 
 @Data
+@Getter
 public class UserDto {
     private String firstname;
     private String lastname;
@@ -11,4 +13,6 @@ public class UserDto {
     private String uuid;
     private String createdAt;
     private String updatedAt;
+
+
 }
