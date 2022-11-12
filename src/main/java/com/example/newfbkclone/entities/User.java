@@ -64,4 +64,9 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Post> userPost;
+
+
+    @OneToMany(mappedBy = "user")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private List<Comment> userComment;
 }
