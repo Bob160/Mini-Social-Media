@@ -1,9 +1,10 @@
 package com.example.newfbkclone.entities;
 
 import lombok.*;
-import org.hibernate.annotations.Table;
+//import org.hibernate.annotations.Table;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -13,10 +14,11 @@ import java.util.Date;
 @Setter
 @Builder
 @ToString
-@NoArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 @AllArgsConstructor
-@Table(name="users_table")
-public class User {
+@Table(name="users")
+public class User implements Serializable {
 
 
     @Id
@@ -36,14 +38,27 @@ public class User {
     @Column(length = 50,nullable = false)
     private String password;
 
+    @Column(length = 50, nullable = false)
+    private String email;
+
     @Column(length = 50,nullable = false)
     private String uuid;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
+
+    @PrePersist
+    public void setCreatedAt() {
+        createdAt = new Date();
+    }
+
+    @PreUpdate
+    public void setUpdatedAt() {
+        updatedAt = new Date();
+    }
+
 
 }

@@ -16,4 +16,13 @@ public interface UserService {
     void deleteUser(Long id);
 
 
+//    ApiResponse createUser(UserDto request);
+//
+//    ApiResponse findAllUsers();
+//
+//    ApiResponse findById(Long id);
+//
+//    ApiResponse findByEmail(String email);
+//
+//    ApiResponse findBySearch(String question);
 }
