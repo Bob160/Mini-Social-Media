@@ -1,12 +1,13 @@
 package com.example.newfbkclone.entities;
 
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 //import org.hibernate.annotations.Table;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-
+import java.util.List;
 
 
 @Entity
@@ -60,5 +61,7 @@ public class User implements Serializable {
         updatedAt = new Date();
     }
 
-
+    @OneToMany(mappedBy = "user")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    private List<Post> userPost;
 }

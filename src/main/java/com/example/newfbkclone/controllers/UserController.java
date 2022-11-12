@@ -5,12 +5,13 @@ import com.example.newfbkclone.pojos.ApiResponse;
 import com.example.newfbkclone.pojos.UserDto;
 import com.example.newfbkclone.services.UserService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/users")
 public class UserController {
 
@@ -42,10 +43,10 @@ public class UserController {
 //    }
 
     @GetMapping("/login-page")
-public String getLoginPage(Model model){
+    public String getLoginPage(Model model){
         model.addAttribute("pageTitle","Login Page");
         return "login";
 
-}
+    }
 
 }

@@ -48,34 +48,34 @@ public class UserServiceImpl {
         return responseManager.success(savedUser);
     }
 
-    public ApiResponse findAllUsers() {
-        List<User> userList = userRepository.findAll();
-        if(!userList.isEmpty())
-            return responseManager.success(userList);
-
-        return responseManager.error("No user available");
-    }
-
-    public ApiResponse findById(Long id) {
-        User user = userRepository.findById(id).orElse(null);
-        if(user!=null)
-            return responseManager.success(user);
-        return responseManager.error("User does not exist");
-    }
-
-    public ApiResponse findByEmail(String email) {
-        User user = userRepository.findByEmail(email).orElse(null);
-        if(user!=null)
-          return responseManager.success(user);
-
-        return responseManager.error("User does not exist");
-    }
-
-    public ApiResponse findBySearch(String question) {
-        List<User> userList = userRepository.findBySearch(question).orElse(null);
-        if(!userList.isEmpty())
-            return responseManager.success(userList);
-
-        return responseManager.error("User does not exist");
-    }
+//    public ApiResponse findAllUsers() {
+//        List<User> userList = userRepository.findAll();
+//        if(!userList.isEmpty())
+//            return responseManager.success(userList);
+//
+//        return responseManager.error("No user available");
+//    }
+//
+//    public ApiResponse findById(Long id) {
+//        User user = userRepository.findById(id).orElse(null);
+//        if(user!=null)
+//            return responseManager.success(user);
+//        return responseManager.error("User does not exist");
+//    }
+//
+//    public ApiResponse findByEmail(String email) {
+//        User user = userRepository.findByEmail(email).orElse(null);
+//        if(user!=null)
+//          return responseManager.success(user);
+//
+//        return responseManager.error("User does not exist");
+//    }
+//
+//    public ApiResponse findBySearch(String question) {
+//        List<User> userList = userRepository.findBySearch(question).orElse(null);
+//        if(!userList.isEmpty())
+//            return responseManager.success(userList);
+//
+//        return responseManager.error("User does not exist");
+//    }
 }

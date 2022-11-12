@@ -21,6 +21,8 @@ public class Post {
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     private String username;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -38,4 +40,9 @@ public class Post {
     public void setUpdatedAt() {
         updatedAt = new Date();
     }
+
+    //Added n Sat 12 Nov
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
