@@ -12,9 +12,9 @@ public interface PostService {
     Post deletePost(PostDto deletePostDto);
 
 
-    PostDto getPostById(Long id);
-
-    PostDto getPostByUuid(String uuid);
-
-    PostDto getPostByUser(String username);
+//    PostDto getPostById(Long id);
+//
+//    PostDto getPostByUuid(String uuid);
+//
+//    PostDto getPostByUser(String username);
 }

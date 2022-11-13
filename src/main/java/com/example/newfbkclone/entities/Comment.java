@@ -25,6 +25,8 @@ public class Comment {
 
     private String comment;
 
+    private String username;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 

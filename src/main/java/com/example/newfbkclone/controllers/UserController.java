@@ -7,6 +7,8 @@ import com.example.newfbkclone.pojos.UserDto;
 import com.example.newfbkclone.services.UserService;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +16,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 @Controller
+@Component
+//@AllArgsConstructor
 @RequiredArgsConstructor
 @RequestMapping("/users")
 public class UserController {
 
     private final UserService userService;
-    private final User user;
+
 
 //    @PostMapping("/signup")
 //    public ApiResponse createUser(@RequestBody UserDto request) {

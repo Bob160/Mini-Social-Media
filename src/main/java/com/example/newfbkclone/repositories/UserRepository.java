@@ -19,9 +19,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     //Optional<User> findAllUsers()
 
-    Optional<User> findByEmail(String email);
-
-    @Query(nativeQuery = true, value = "SELECT * FROM users WHERE firstname LIKE %:question% OR email LIKE %:question%")
-    Optional<List<User>> findBySearch(String question);
+//    Optional<User> findByEmail(String email);
+//
+//    @Query(nativeQuery = true, value = "SELECT * FROM users WHERE firstname LIKE %:question% OR email LIKE %:question%")
+//    Optional<List<User>> findBySearch(String question);
 
 }

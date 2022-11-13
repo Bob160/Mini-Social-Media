@@ -2,8 +2,9 @@ package com.example.newfbkclone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages= "com")
 public class NewFbkCloneApplication {
 
     public static void main(String[] args) {

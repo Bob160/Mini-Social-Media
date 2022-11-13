@@ -10,15 +10,16 @@ import java.util.Date;
 import java.util.List;
 
 
-@Entity
+
 @Getter
 @Setter
-@Builder
+//@Builder
 @ToString
 //@NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Table(name="users")
+@Entity(name = "user")
 public class User implements Serializable {
 
 

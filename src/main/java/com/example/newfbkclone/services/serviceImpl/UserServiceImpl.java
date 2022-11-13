@@ -6,22 +6,60 @@ import com.example.newfbkclone.exception.NameAlreadyExistException;
 import com.example.newfbkclone.exception.NameCannotBeEmptyException;
 import com.example.newfbkclone.pojos.UserDto;
 import com.example.newfbkclone.repositories.UserRepository;
-import com.example.newfbkclone.util.ResponseManager;
+import com.example.newfbkclone.services.UserService;
+//import com.example.newfbkclone.util.ResponseManager;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
-public class UserServiceImpl {
 
-    private final UserRepository userRepository;
-    private final ResponseManager responseManager;
+public class UserServiceImpl implements UserService {
+
+    UserRepository userRepository;
+
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+    //private final ResponseManager responseManager;
 
 
-    public User signUp(UserDto userDto) {
+    //public User signUp(UserDto userDto) {
+//        User newUser = new User();
+//        if (newUser.getFirstname() == null)
+//            throw new NameCannotBeEmptyException("Firstname cannot be empty!");
+//        else if (newUser.getLastname() == null)
+//            throw new NameCannotBeEmptyException("Lastname cannot be empty!");
+//        else if (newUser.getUsername() == null)
+//            throw new NameCannotBeEmptyException("Please enter a Username!");
+//        else if (newUser.getPassword() == null)
+//            throw new NameCannotBeEmptyException("Password is required");
+//        else if (newUser.getEmail() == null)
+//            throw new NameCannotBeEmptyException("Please enter an Email");
+//
+////        boolean userExist = userRepository.existsByEmail(newUser.getEmail());
+////        if(userExist)
+////            throw new NameAlreadyExistException("Email already exist.\n Login instead");
+//
+//        newUser.setFirstname(userDto.getFirstname());
+//        newUser.setLastname(userDto.getLastname());
+//        newUser.setUsername(userDto.getUsername());
+//        newUser.setPassword(userDto.getPassword());
+//        newUser.setEmail(userDto.getEmail());
+//        newUser.setUuid(UUID.randomUUID().toString());
+//        newUser.setCreatedAt(new Date());
+//        newUser.setUpdatedAt(new Date());
+//
+//        User savedUser = userRepository.save(newUser);
+//        return savedUser;
+    //}
+
+    @Override
+    public User userSignUp(UserDto userDto) {
         User newUser = new User();
         if (newUser.getFirstname() == null)
             throw new NameCannotBeEmptyException("Firstname cannot be empty!");
@@ -47,8 +85,13 @@ public class UserServiceImpl {
         newUser.setCreatedAt(new Date());
         newUser.setUpdatedAt(new Date());
 
-        User savedUser = userRepository.save(newUser);
-        return savedUser;
+        return userRepository.save(newUser);
+
+    }
+
+    @Override
+    public User userLogin(String email, String password) {
+        return null;
     }
 
 //    public ApiResponse createUser(UserDto request) {
