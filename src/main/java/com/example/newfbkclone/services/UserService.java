@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface UserService {
     User userSignUp(UserDto userSignUpDto);
+
+    User userLogin(String email, String password);
     List<ApiResponse> getAllUsers();
     UserDto getUser(Long id);
 
