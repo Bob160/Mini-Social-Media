@@ -3,6 +3,8 @@ package com.example.newfbkclone.pojos;
 import lombok.Data;
 import lombok.Getter;
 
+import java.util.Date;
+
 @Data
 @Getter
 public class UserDto {
@@ -12,8 +14,8 @@ public class UserDto {
     private String password;
     private String email;
     private String uuid;
-    private String createdAt;
-    private String updatedAt;
+    private Date createdAt;
+    private Date updatedAt;
 
 
 }
