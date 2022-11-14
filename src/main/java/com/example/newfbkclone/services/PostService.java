@@ -2,14 +2,17 @@ package com.example.newfbkclone.services;
 
 
 import com.example.newfbkclone.entities.Post;
+import com.example.newfbkclone.entities.User;
 import com.example.newfbkclone.pojos.PostDto;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface PostService {
-    Post createPost(PostDto createPostDto);
+    void createPost(User user, Post post);
 
-    Post deletePost(PostDto deletePostDto);
+    void updatePost(Post post);
+
+    void deletePost(Post post);
 
 
 //    PostDto getPostById(Long id);
