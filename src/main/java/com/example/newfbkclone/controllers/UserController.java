@@ -50,16 +50,38 @@ public class UserController {
 //        return userService.findBySearch(question);
 //    }
 
+
+
+    //Index / Home Page
+    @GetMapping("/index")
+    public String home() {
+        return "index";
+    }
+
+
+    //Landing Page
+    @GetMapping("/landing")
+    public String landing() {
+        return "landing";
+    }
+
+    //Login Page
     @GetMapping("/login-page")
     public String getLoginPage(Model model){
         model.addAttribute("pageTitle","Login Page");
         return "login";
     }
 
-//    @PostMapping("/login-page")
-//    public String getLoginPage() {
-//
-//    }
+    @PostMapping("/login-page")
+    public String getLoginPage(User user) {
+        User authUser = userService.userLogin(user.getEmail(), user.getPassword());
+
+        if (Objects.nonNull(authUser)) {
+            return "redirect:/landing";
+        } else {
+            return "redirect:/login-page";
+        }
+    }
 
 
     //Sign Up

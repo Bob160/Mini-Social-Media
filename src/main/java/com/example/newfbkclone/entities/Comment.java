@@ -54,6 +54,7 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    private String commentId;
 
 //    @OneToMany(mappedBy = "comment")
 //    @Cascade(org.hibernate.annotations.CascadeType.ALL)
